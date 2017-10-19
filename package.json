@@ -1,0 +1,54 @@
+{
+  "name": "touchbar-command-palette",
+  "displayName": "Touchbar Command Palette and Quick Open",
+  "description": "Launch Command Palete or Quick Open from touchbar",
+  "version": "0.0.1",
+  "publisher": "ashhitch",
+  "engines": {
+    "vscode": "^1.17.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": [
+    "onCommand:extension.touchbarCommandPalette",
+    "onCommand:extension.touchbarQuickOpen"
+  ],
+  "main": "./out/extension",
+  "icon": "icon.png",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.touchbarCommandPalette",
+        "title": "CMD P"
+      },
+      {
+        "command": "extension.touchbarQuickOpen",
+        "title": "Q Open"
+      }
+    ],
+    "menus": {
+      "touchBar": [
+        {
+          "command": "extension.touchbarCommandPalette",
+          "group": "cmd"
+        },
+        {
+          "command": "extension.touchbarQuickOpen",
+          "group": "cmd"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "npm run compile && node ./node_modules/vscode/bin/test"
+  },
+  "devDependencies": {
+    "typescript": "^2.5.3",
+    "vscode": "^1.1.5",
+    "@types/node": "^7.0.43",
+    "@types/mocha": "^2.2.42"
+  }
+}

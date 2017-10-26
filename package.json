@@ -1,8 +1,8 @@
 {
   "name": "touchbar-command-palette",
-  "displayName": "Touchbar Command Palette and Quick Open",
-  "description": "Launch Command Palete or Quick Open from touchbar",
-  "version": "0.0.1",
+  "displayName": "Touchbar Commands",
+  "description": "Launch Command Palete, Terminal, Commenting Lines or Quick Open from touchbar",
+  "version": "0.0.2",
   "publisher": "ashhitch",
   "engines": {
     "vscode": "^1.17.0"
@@ -13,10 +13,14 @@
     "url": "https://github.com/ashhitch/vscode-touchbar-command-palette.git"
   },
   "bugs": "https://github.com/ashhitch/vscode-touchbar-command-palette/issues",
-  "categories": ["Other"],
+  "categories": [
+    "Other"
+  ],
   "activationEvents": [
     "onCommand:extension.touchbarCommandPalette",
-    "onCommand:extension.touchbarQuickOpen"
+    "onCommand:extension.touchbarQuickOpen",
+    "onCommand:extension.touchbarTerminal",
+    "onCommand:extension.touchbarComment"
   ],
   "main": "./out/extension",
   "icon": "icon.png",
@@ -29,6 +33,14 @@
       {
         "command": "extension.touchbarQuickOpen",
         "title": "Q Open"
+      },
+      {
+        "command": "extension.touchbarTerminal",
+        "title": "Term"
+      },
+      {
+        "command": "extension.touchbarComment",
+        "title": "// "
       }
     ],
     "menus": {
@@ -39,6 +51,14 @@
         },
         {
           "command": "extension.touchbarQuickOpen",
+          "group": "cmd"
+        },
+        {
+          "command": "extension.touchbarTerminal",
+          "group": "cmd"
+        },
+        {
+          "command": "extension.touchbarComment",
           "group": "cmd"
         }
       ]

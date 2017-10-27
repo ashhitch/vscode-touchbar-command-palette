@@ -13,9 +13,9 @@ Please report any issues via github
 
 ## Release Notes
 ### v0.0.2
-Added Terminal and Line Comments
+- Added Terminal and Line Comments
 
-### 0.0.1
+### v0.0.1
 
 Initial release of extension
 

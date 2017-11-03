@@ -2,7 +2,7 @@
   "name": "touchbar-command-palette",
   "displayName": "Touchbar Command Palette and Quick Open",
   "description": "Launch Command Palete or Quick Open from touchbar",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "publisher": "ashhitch",
   "engines": {
     "vscode": "^1.17.0"
@@ -13,7 +13,21 @@
     "url": "https://github.com/ashhitch/vscode-touchbar-command-palette.git"
   },
   "bugs": "https://github.com/ashhitch/vscode-touchbar-command-palette/issues",
-  "categories": ["Other"],
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "macbook",
+    "macbook pro",
+    "mac book pro",
+    "touch bar",
+    "touchbar",
+    "vscode",
+    "vsc",
+    "visual studio code",
+    "developers",
+    "buttons"
+  ],
   "activationEvents": [
     "onCommand:extension.touchbarCommandPalette",
     "onCommand:extension.touchbarQuickOpen"
@@ -35,14 +49,34 @@
       "touchBar": [
         {
           "command": "extension.touchbarCommandPalette",
-          "group": "cmd"
+          "group": "cpcmd",
+          "when": "config.touchbarCommandPalette.commandPalette"
         },
         {
           "command": "extension.touchbarQuickOpen",
-          "group": "cmd"
+          "group": "cpcmd",
+          "when": "config.touchbarCommandPalette.quickOpen"
         }
       ]
-    }
+    },
+    "configuration": [
+      {
+        "type": "object",
+        "title": "Touchbar Commands",
+        "properties": {
+          "touchbarCommandPalette.commandPalette": {
+            "type": "boolean",
+            "default": true,
+            "description": "Show Command Palette Button"
+          },
+          "touchbarCommandPalette.quickOpen": {
+            "type": "boolean",
+            "default": true,
+            "description": "Show Quick Open Button"
+          }
+        }
+      }
+    ]
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
@@ -52,9 +86,10 @@
     "test": "npm run compile && node ./node_modules/vscode/bin/test"
   },
   "devDependencies": {
-    "typescript": "^2.5.3",
-    "vscode": "^1.1.5",
+    "@types/mocha": "^2.2.42",
     "@types/node": "^7.0.43",
-    "@types/mocha": "^2.2.42"
+    "typescript": "^2.5.3",
+    "vsce": "^1.32.0",
+    "vscode": "^1.1.5"
   }
 }

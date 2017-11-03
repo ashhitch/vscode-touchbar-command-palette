@@ -18,15 +18,10 @@
   ],
   "keywords": [
     "macbook",
-    "macbook pro",
-    "mac book pro",
     "touch bar",
     "touchbar",
     "vscode",
-    "vsc",
-    "visual studio code",
-    "developers",
-    "buttons"
+    "developers"
   ],
   "activationEvents": [
     "onCommand:extension.touchbarCommandPalette",

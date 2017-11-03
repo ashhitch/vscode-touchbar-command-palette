@@ -32,7 +32,7 @@ jobs:
 
       - run:
           name: Insall Test Deps
-          command: sudo apt-get install libgtk2.0-0
+          command: sudo apt-get install libgtk2.0-0 && sudo apt-get install libxtst6 && sudo apt-get install libgconf-2-4
           
 
       - run: yarn install

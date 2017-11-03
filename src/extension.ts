@@ -20,9 +20,28 @@ export function activate(context: vscode.ExtensionContext) {
     }
   );
 
+  let terminal = vscode.commands.registerCommand(
+    'extension.touchbarTerminal',
+    () => {
+      // Open Quick Open
+      vscode.commands.executeCommand('workbench.action.terminal.toggleTerminal');
+    }
+  );
+
+  // extension.touchbarComment
+  let comment = vscode.commands.registerCommand(
+    'extension.touchbarComment',
+    () => {
+      // Open Quick Open
+      vscode.commands.executeCommand('editor.action.commentLine');
+    }
+  );
+
   // Push onto context
   context.subscriptions.push(cmdP);
   context.subscriptions.push(quickOpen);
+  context.subscriptions.push(terminal);
+  context.subscriptions.push(comment);
 }
 
 // this method is called when your extension is deactivated

@@ -1,7 +1,7 @@
 {
   "name": "touchbar-command-palette",
-  "displayName": "Touchbar Command Palette and Quick Open",
-  "description": "Launch Command Palete or Quick Open from touchbar",
+  "displayName": "Touchbar Command Palette",
+  "description": "Launch command related actions from the from the touchbar, each button can be configured to show or not.",
   "version": "0.1.0",
   "publisher": "ashhitch",
   "engines": {
@@ -25,7 +25,9 @@
   ],
   "activationEvents": [
     "onCommand:extension.touchbarCommandPalette",
-    "onCommand:extension.touchbarQuickOpen"
+    "onCommand:extension.touchbarQuickOpen",
+    "onCommand:extension.touchbarTerminal",
+    "onCommand:extension.touchbarSidebar"
   ],
   "main": "./out/extension",
   "icon": "icon.png",
@@ -38,6 +40,14 @@
       {
         "command": "extension.touchbarQuickOpen",
         "title": "Q Open"
+      },
+      {
+        "command": "extension.touchbarTerminal",
+        "title": "Term"
+      },
+      {
+        "command": "extension.touchbarSidebar",
+        "title": "Sidebar"
       }
     ],
     "menus": {
@@ -51,7 +61,18 @@
           "command": "extension.touchbarQuickOpen",
           "group": "cpcmd",
           "when": "config.touchbarCommandPalette.quickOpen"
+        },
+        {
+          "command": "extension.touchbarTerminal",
+          "group": "cpcmd",
+          "when": "config.touchbarCommandPalette.terminal"
+        },
+        {
+          "command": "extension.touchbarSidebar",
+          "group": "cpcmd",
+          "when": "config.touchbarCommandPalette.sidebar"
         }
+       
       ]
     },
     "configuration": [
@@ -68,6 +89,16 @@
             "type": "boolean",
             "default": true,
             "description": "Show Quick Open Button"
+          },
+          "touchbarCommandPalette.terminal": {
+            "type": "boolean",
+            "default": true,
+            "description": "Show or hide terminial"
+          },
+          "touchbarCommandPalette.sidebar": {
+            "type": "boolean",
+            "default": false,
+            "description": "Show or hide sidebar"
           }
         }
       }

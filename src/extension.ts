@@ -20,6 +20,26 @@ export function activate(context: vscode.ExtensionContext) {
     }
   );
 
+  let terminalToggle = vscode.commands.registerCommand(
+    'extension.touchbarTerminal',
+    () => {
+      // Toggle Terminal
+      vscode.commands.executeCommand(
+        'workbench.action.terminal.toggleTerminal'
+      );
+    }
+  );
+
+  let sidebarToggle = vscode.commands.registerCommand(
+    'extension.touchbarSidebar',
+    () => {
+      // Toggle Sidebar
+      vscode.commands.executeCommand(
+        'workbench.action.toggleSidebarVisibility'
+      );
+    }
+  );
+
   // Push onto context
   context.subscriptions.push(cmdP);
   context.subscriptions.push(quickOpen);

@@ -2,7 +2,7 @@
   "name": "touchbar-command-palette",
   "displayName": "Touchbar Command Palette",
   "description": "Launch command related actions from the from the touchbar, each button can be configured to show or not.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "publisher": "ashhitch",
   "engines": {
     "vscode": "^1.17.0"
